@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router';
+import { Link } from 'react-router';
 
 export const clientLoader = async () => {
   const data = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php').then((r) => r.json());
@@ -10,11 +10,16 @@ const Meals = ({ loaderData }) => {
 
   return (
     <section>
-      <ul>
+      <div className='meal-list'>
         {mealsData.map((entry) => (
-          <li>{entry.strCategory}</li>
+          <section className='meal'>
+              <Link to="/">
+                {entry.strCategory} 
+                <img src={entry.strCategoryThumb} alt={entry.idCategory} />
+              </Link>
+          </section>
         ))}
-      </ul>
+      </div>
     </section>
   );
 };

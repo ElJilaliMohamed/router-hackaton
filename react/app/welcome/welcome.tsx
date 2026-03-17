@@ -39,7 +39,7 @@ export function Welcome() {
                   </a>
                 </li>
               ))}
-              <li><Link to="/meals">Meals</Link></li>
+              <li className="meal-link"><Link to="/meals">Meals</Link></li>
             </ul>
           </nav>
         </div>
