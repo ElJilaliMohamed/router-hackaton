@@ -12,24 +12,164 @@ body {
     color-scheme: dark;
   }
 }
+
+/* ── Category & Meal List ── */
+
+.category-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.category-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .meal-list {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   justify-content: center;
+  gap: 2rem;
 }
+
 .meal {
-  margin: 2rem;
   display: flex;
-  flex-direction: row;
-  max-width: 40%;
-  transition: 0.2s;
-}
-.meal-link {
-  color: rgb(223, 74, 74);
-text-decoration: underline;
+  flex-direction: column;
+  width: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 
 .meal:hover {
-  transform: translateY(-1rem);
+  transform: translateY(-0.5rem);
+}
+
+.meal-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.meal-card-link img {
+  width: 100%;
+  display: block;
+}
+
+.meal-name {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.meal-link {
+  color: rgb(223, 74, 74);
+  text-decoration: underline;
+}
+
+/* ── Detail Page ── */
+
+.detail-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.detail-back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: rgb(223, 74, 74);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.detail-back:hover {
+  text-decoration: underline;
+}
+
+.detail-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.detail-img {
+  width: 300px;
+  border-radius: 12px;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.detail-meta {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detail-subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.detail-ingredient-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.detail-ingredient-item {
+  padding: 0.5rem 0.75rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.detail-measure {
+  font-weight: 600;
+}
+
+.detail-instructions-text {
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+/* ── Dark mode ── */
+
+@media (prefers-color-scheme: dark) {
+  .meal {
+    background: #1a1a2e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .detail-meta {
+    color: #aaa;
+  }
+
+  .detail-ingredient-item {
+    background: #1a1a2e;
+  }
 }
